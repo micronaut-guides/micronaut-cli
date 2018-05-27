@@ -1,0 +1,36 @@
+In this screencast, we're going to show how you can use the Micronaut command line interface to create apps with Micronaut using Java Groovy or Kotlin. The CLI is the recommended way to create new projects. It supports both Gradle and Maven builds and also provides commands for generating controllers, client interfaces and other useful code generation commands.
+
+So to use a CLI, you will need to have Micronaut installed either from source as a download or via SDKMAN. If you have installed Microanut yourself and not from SDKMAN, make sure that you have set the $MICRONAUT_HOME environment variable and have added $MICRONAUT_HOME/cli/build/bin directory to your path.
+
+Now. You should be ready to use the Micronaut CLI in your terminal run the mn command to launch the CLI. The MN command can be run with an argument such as create app, which we'll see in a moment. If you run mn without an argument, it will launch an interactive shell. Where you can explore available commands and features all viewable with tap completion.
+
+So if we hit the Tab Key we're presented with a list of all the commands we can run including create-app create-federation create-function and a few others. We're going to focus on create-app for now since this is the primary command when generating a new project if we type help followed by create-app, we can get a list of features offered by the command.
+
+Let's quit the interactive vote for now. To create an app. We simply supply a project named after the create-app command and hit return by default. The CLI will generate a Java application and a Gradle project
+
+To create projects using Groovy, we pass The groovy feature as an argument with the -features flag
+
+To create a project with Kotlin, we pass the kotlin feature to the same flag
+
+Each of the language options in the CLI, also includes a default test framework. The defaults are JUnit for Java projects, Spock for Groovy, Spek for Kotlin projects. You can mix and match this as well by overriding the test feature when you set the language, for example, we can 
+create a Java project with a Spock testing framework installed.
+
+All of the projects we've just generated were using the Gradle build tool which is the default. We can start up the application with the run task.
+
+Maven builds are also supported again for all three languages. You can choose Maven using the build flag like so.
+And there we go. We can run our Maven build using the compiled exec command.
+A few more things to note about the CLI. When run as a standalone command such as MN create app, the default behavior is to create a new project directory inside the current directory. If you like to create the project in place that is using the current directory as the project directory you can pass the -inplace flag.
+
+When running the CLI with interactive mode the project will always be generated in place. So keep that in mind when experimenting with the interactive shell. Another thing to note is that the CLI will set a default package for your project based on the project name. For example, mn create-app demo-project, will create a default package of demo.project.
+
+If you like to specify your own default package path, you can prefix it to the project name with a period.
+This will create a project with a default package of example. If you take a look inside our project you'll notice on Micronaut included the file writes out some of the defaults that were chosen when the project was created. This file is also how the CLI recognizes when it is within a CLI project so we can know what commands are available.
+
+We can see the profile which you can think of as a project template for now is listed as well as the default package. We just discussed. There are also variables for the default source language and test framework. These variables can be edited to change the behavior of the CLI code generation. But please note simply changing the values in this file will not automatically add the required dependencies and configuration to the project that will have to be done manually if they are not included at the time of the Project's creation. 
+
+Now once we've created a project we can take advantage of additional commands provided by the CLI. If we start the interactive mode from within our project directory we can use tab completion to see the available commands.
+
+Using these commands is straightforward. Simply supply the name of the class to generate and hit return. This will create a Java controller in our case along with an accompanying Junit test using the default package that was set by the CLI. We can override the language of the controller by passing the lang flag.
+
+This will create a groovy controller and a Junit test following the default settings in our Micronaut all of these commands on to the default variables in the Micronaut. So if you liked your controllers to default to spock for tests, you can make those changes in that file.
+Now if we generate another controller will see that a Spock test is generated. Honoring the new setting. This wraps up our introduction to the Micronaut CLI, the documentation at docs.micronaut.io has additional details on the CLI how profiles and features work and much more. Please stay tuned for additional screencasts and other materials to help you become productive with Micronaut.
