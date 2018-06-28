@@ -6,7 +6,9 @@ jdk:
 - oraclejdk8
 before_script:
 - rm -rf target
-script: "./travis-build.sh"
+script:
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./travis-build-pr.sh; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./travis-build.sh; fi
 env:
   global:
   - secure: GjzBL1B3jfR3F4CCVCQLeTfzJkzCFoqGUv44z5+r9iz5Cqaq8T5KHdEMFKxvhYKQ00NP7IqNpqr+h+JixdMtvtTvICicRU0ocleUnUZfmW6bi7Im3t7AJhN8D3mup9y9dbsLQ+22vlq43y9H8KFZNJQ3SgJE9IDl9KPTAux02d3L6VytC3HgA+RmfrGEBNkn+5OgFs/ZAZ8okUPqurOaYqsm3ZPYRW1F3B53y6iMZdjuZL/bbOa/7CQPy+3z2Lm+VGNAQuqB90/yztd75iVnHhBRTOmv4wbLEZ9gcgYHndjD7b9oYKlCyBw3eefNB2S/7nq5Gt98B6567vbNUoLGty0wJPc2XTzM9SGUcBy3mc3DWJeO6dQqmQg0ngTwXP0mvub2+LnpWrXqPKT9XvS5XfyRJ3v0uEZiwoPTSmZmiye5v5FsevF0CB0rYPKT5J4/cyyDeFsBUZF6XuZ/ans5+2xHdDEjtsOvfYU01w2dfXOY4s9gfnnI0W1IrEoNOd2I+le1zGMEdfU6sXmZ2xjqHQ3uYBJd2kfPT49Kn0JnXc1IbtbwtoBqsi0APBArreAGfphrkYdJFjJjn0dZN6eXnyms1XGi+qpNkvRnYqftKI3gAX9UODwJKwPbv3LX6syvhRq6XoGsq+C7OlnWYBrVe2e2wIKBWC0Zzn7bum7Kmlo=
