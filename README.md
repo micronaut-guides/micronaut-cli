@@ -1,3 +1,4 @@
-# micronaut-cli
+# Micronaut CLI #
 
-http://guides.micronaut.io/micronaut-cli/guide/index.html
+This guide is available at http://guides.micronaut.io/micronaut-cli/guide/index.html
+
