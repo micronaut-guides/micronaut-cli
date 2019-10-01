@@ -1,6 +1,6 @@
 In this screencast, we're going to show how you can use the Micronaut command line interface to create apps with Micronaut using Java Groovy or Kotlin. The CLI is the recommended way to create new projects. It supports both Gradle and Maven builds and also provides commands for generating controllers, client interfaces and other useful code generation commands.
 
-So to use a CLI, you will need to have Micronaut installed either from source as a download or via SDKMAN. If you have installed Microanut yourself and not from SDKMAN, make sure that you have set the $MICRONAUT_HOME environment variable and have added $MICRONAUT_HOME/cli/build/bin directory to your path.
+So to use a CLI, you will need to have Micronaut installed either from source as a download or via SDKMAN. If you have installed Micronaut yourself and not from SDKMAN, make sure that you have set the $MICRONAUT_HOME environment variable and have added $MICRONAUT_HOME/cli/build/bin directory to your path.
 
 Now. You should be ready to use the Micronaut CLI in your terminal run the mn command to launch the CLI. The MN command can be run with an argument such as create app, which we'll see in a moment. If you run mn without an argument, it will launch an interactive shell. Where you can explore available commands and features all viewable with tap completion.
 
@@ -30,7 +30,7 @@ We can see the profile which you can think of as a project template for now is l
 
 Now once we've created a project we can take advantage of additional commands provided by the CLI. If we start the interactive mode from within our project directory we can use tab completion to see the available commands.
 
-Using these commands is straightforward. Simply supply the name of the class to generate and hit return. This will create a Java controller in our case along with an accompanying Junit test using the default package that was set by the CLI. We can override the language of the controller by passing the lang flag.
+Using these commands is straightforward. Simply supply the name of the class to generate and hit return. This will create a Java controller in our case along with an accompanying JUnit test using the default package that was set by the CLI. We can override the language of the controller by passing the lang flag.
 
-This will create a groovy controller and a Junit test following the default settings in our Micronaut all of these commands on to the default variables in the Micronaut. So if you liked your controllers to default to spock for tests, you can make those changes in that file.
+This will create a Groovy controller and a JUnit test following the default settings in our Micronaut all of these commands on to the default variables in the Micronaut. So if you liked your controllers to default to Spock for tests, you can make those changes in that file.
 Now if we generate another controller will see that a Spock test is generated. Honoring the new setting. This wraps up our introduction to the Micronaut CLI, the documentation at docs.micronaut.io has additional details on the CLI how profiles and features work and much more. Please stay tuned for additional screencasts and other materials to help you become productive with Micronaut.
