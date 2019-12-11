@@ -1,3 +1,5 @@
 video: 
   title: Micronaut CLI introduction
   transcript: Transcript  
+help:
+  title: Help with Micronaut  
